@@ -1,4 +1,4 @@
-# RedirectCredentialBoundary 0.1.0
+# RedirectCredentialBoundary 0.1.1
 
 作者：dhtfish98。此项目独立实现一个范围有限的 HTTP(S) GET 客户端，用于研究重定向时请求凭据的来源边界。默认只向当前请求的相同 `scheme/host/port` 来源继续发送 `Authorization`、`Cookie`、`Cookie2` 与可能含令牌的 `Referer`；转向其他来源时，从后续请求中永久移除这些标头。客户端不实现代理，因而拒绝调用方提供 `Proxy-Authorization`，避免把代理凭据直接发给目标站。自定义凭据标头可显式列入 `credential_header_names`。跨来源转发只能通过精确且有方向的 `credential_redirects=((来源, 目标),)` 例外显式允许，HTTPS 转 HTTP 时即使列入也会剥离。
 
