@@ -168,7 +168,7 @@ def main() -> int:
         source_lab = json.loads((BUILD / "lab-source.json").read_text())
         installed_lab = json.loads((BUILD / "lab-installed.json").read_text())
         checks["both_lab_receipts_pass"] = source_lab["result"] == installed_lab["result"] == "PASS"
-        checks["author_and_version"] = receipt["author"] == "dhtfish98" and expected_version == "0.1.1"
+        checks["author_and_version"] = receipt["author"] == "dhtfish98" and expected_version == "0.1.2"
         checks["source_tree_has_no_build_products"] = not any(
             part in {"__pycache__", "dist", "build", ".venv"}
             for base in (SOURCE / "src", SOURCE / "tests") for file in base.rglob("*") for part in file.parts

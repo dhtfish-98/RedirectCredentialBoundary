@@ -146,7 +146,7 @@ def run() -> dict[str, object]:
     }
     return {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
-        "version": "0.1.1",
+        "version": "0.1.2",
         "environment": "two ThreadingHTTPServer instances bound to 127.0.0.1 on ephemeral ports",
         "input": input_record,
         "weak_baseline": {"status": weak_status, "server_receipts": weak_records},
